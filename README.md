@@ -35,13 +35,17 @@ Please download the weights from [GoogleDrive](https://drive.google.com/drive/fo
 python test.py --dataroot /your_input/dir --load_size 512 --output_dir /your_output/dir
 ```
 The above command includes three arguments:
-- dataroot: your test file or directory (eg: either test_samples/ or test_samples/madoka.jpg)
+- dataroot: your test file or directory
 - load_size: due to the memory limit, we need to resize the input image before processing. By default, we resize it to `512x512`.
 - output_dir: path of the output directory
 
-Run our example:
+Run our example on a specific image:
 ```Shell
-python3 test.py --dataroot test_samples/madoka.jpg --load_size 512 --output_dir results/
+python test.py --dataroot test_samples/madoka.jpg --load_size 512 --output_dir results/
+```
+or running on a folder:
+```
+python test.py --dataroot test_samples/ --load_size 512 --output_dir results/
 ```
 
 ### Train
