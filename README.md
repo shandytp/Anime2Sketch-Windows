@@ -49,7 +49,7 @@ python test.py --dataroot test_samples/ --load_size 512 --output_dir results/
 ```
 
 ### Train
-This project is a sub-branch of [AODA](https://github.com/Mukosame/AODA). Please check it for the training instructions.
+Check the main repository for more info
 
 ## More Results
 Our model works well on illustration arts:
@@ -63,10 +63,6 @@ And more anime results:
 ![demo4](demos/vinland_3.gif)
 ![demo5](demos/vinland_1.gif)
 
-## Contact
-[Xiaoyu Xiang](https://engineering.purdue.edu/people/xiaoyu.xiang.1).
-
-You can also leave your questions as issues in the repository. I will be glad to answer them!
 
 ## License
 This project is released under the [MIT License](LICENSE).
