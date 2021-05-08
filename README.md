@@ -5,37 +5,37 @@ By [Xiaoyu Xiang](https://engineering.purdue.edu/people/xiaoyu.xiang.1)
 
 ![teaser demo](demos/vinland_saga.gif)
 
-## Updates
-- 2021.5.2: Upload more example results of anime video.
-- 2021.4.30: Upload the test scripts. Now our repo is ready to run!
-- 2021.4.11: Upload the pretrained weights, and more test results.
-- 2021.4.8: Create the repo.
-
 ## Introduction
-The repository contains the testing codes and pretrained weights for Anime2Sketch.
+The repository contains the testing codes and pretrained weights for Anime2Sketch. Slightly modified by bycloud for Windows installation.
 
 Anime2Sketch is a sketch extractor that works well on illustration, anime art, and manga. It is an application based on the paper ["Adversarial Open Domain Adaption for Sketch-to-Photo Synthesis"](https://arxiv.org/abs/2104.05703).
 
-## Prerequisites
-- Linux or macOS
-- Python 3 (Recommend to use [Anaconda](https://www.anaconda.com/download/#linux))
-- CPU or NVIDIA GPU + CUDA CuDNN
-- [Pillow](https://pillow.readthedocs.io/en/stable/), [PyTorch](https://pytorch.org/)
+## Requirements
+Anaconda3 Prompt is used
 
+You can get it [here](https://www.anaconda.com/products/individual)
 
 ## Get Started
 ### Installation 
-Install the required packages: ```pip install -r requirements.txt```
+```
+conda create -n a2s python=3.6
+
+conda activate a2s
+
+conda install pytorch torchvision torchaudio cudatoolkit=10.2 -c pytorch
+
+conda install pytorch==1.7.1 torchvision==0.8.2 torchaudio==0.7.2 cudatoolkit=10.2 -c pytorch
+```
 
 ### Download Pretrained Weights
 Please download the weights from [GoogleDrive](https://drive.google.com/drive/folders/1Srf-WYUixK0wiUddc9y3pNKHHno5PN6R?usp=sharing), and put it into the [weights/](weights/) folder.
 
 ### Test
 ```Shell
-python3 test.py --dataroot /your_input/dir --load_size 512 --output_dir /your_output/dir
+python test.py --dataroot /your_input/dir --load_size 512 --output_dir /your_output/dir
 ```
 The above command includes three arguments:
-- dataroot: your test file or directory
+- dataroot: your test file or directory (eg: either test_samples/ or test_samples/madoka.jpg)
 - load_size: due to the memory limit, we need to resize the input image before processing. By default, we resize it to `512x512`.
 - output_dir: path of the output directory
 
