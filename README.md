@@ -39,16 +39,16 @@ The above command includes three arguments:
 - load_size: due to the memory limit, we need to resize the input image before processing. By default, we resize it to `512x512`.
 - output_dir: path of the output directory
 
-Run our example on a specific image:
+## Run our example on a specific image:
 ```Shell
 python test.py --dataroot test_samples/madoka.jpg --load_size 512 --output_dir results/
 ```
-or running on a folder:
+## or running on a folder:
 ```
 python test.py --dataroot test_samples/*FOLDER_NAME* --load_size 512 --output_dir results/
 ```
 
-or running on a video:
+## or running on a video:
 
 Get ffmpeg
 ```
