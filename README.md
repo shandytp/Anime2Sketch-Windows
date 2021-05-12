@@ -45,7 +45,26 @@ python test.py --dataroot test_samples/madoka.jpg --load_size 512 --output_dir r
 ```
 or running on a folder:
 ```
-python test.py --dataroot test_samples/ --load_size 512 --output_dir results/
+python test.py --dataroot test_samples/*FOLDER_NAME* --load_size 512 --output_dir results/
+```
+
+or running on a video:
+
+Get ffmpeg
+```
+conda install -c conda-forge ffmpeg
+```
+We would need to extract all the frames first. Find out the FPS of the video by right clicking it. Drag the video into `test_samples` folder, and create the folder based on the mp4's name for ease use later.
+```
+ffmpeg -i test_samples/*YOUR_MP4_NAME*.mp4 -vf fps=*YOUR_FPS_COUNT* test_samples/*YOUR_MP4_NAME*/%06d.jpg
+```
+Run the main module:
+```
+python test.py --dataroot test_samples/*FOLDER_NAME* --load_size 512 --output_dir results/*FOLDER_NAME*
+```
+Put the images back together:
+```
+ffmpeg -i results/*YOUR_MP4_NAME*/%06d.jpg -vf fps=*YOUR_FPS_COUNT* results/*YOUR_MP4_NAME*.mp4
 ```
 
 ### Train
